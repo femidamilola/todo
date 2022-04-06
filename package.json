@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "\"node dist/js/app.js\""
+    "start": "node dist/js/app.js"
   },
   "engines": {
     "node": "16.14.2"
