@@ -1,0 +1,5 @@
+{
+    "env": {
+        "MONGO_URI": "mongodb+srv://ogsholzy:jUD9XPitrb7FnDs@cluster0.a1irs.mongodb.net/todo?retryWrites=true&w=majority"
+    }
+}
