@@ -19,8 +19,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "concurrently \"tsc -w\" \"nodemon dist/js/app.js\"",
-    "heroku-postbuild": "cd client && yarn install --only=dev && yarn install && yarn run build"
+    "start": "concurrently \"tsc -w\" \"nodemon dist/js/app.js\""
   },
   "engines": {
     "node": "16.14.2"

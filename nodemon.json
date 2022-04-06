@@ -1,5 +1,7 @@
 {
     "env": {
+        "PORT": 3000,
+        "URL": "localhost:3000",
         "MONGO_URI": "mongodb+srv://ogsholzy:jUD9XPitrb7FnDs@cluster0.a1irs.mongodb.net/todo?retryWrites=true&w=majority"
     }
 }
