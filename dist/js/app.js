@@ -7,9 +7,12 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const cors_1 = __importDefault(require("cors"));
 const routes_1 = __importDefault(require("./routes"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const path = require("path");
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 4000;
+console.log(PORT);
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 // app.post('/todo/add', (req, res) => {
@@ -17,7 +20,7 @@ app.use(express_1.default.json());
 // })
 app.use(routes_1.default);
 app.use(express_1.default.static(path.join(__dirname, "client", "build")));
-const uri = `${process.env.MONGO_URI}`;
+const uri = 'mongodb+srv://ogsholzy:jUD9XPitrb7FnDs@cluster0.a1irs.mongodb.net/todo?retryWrites=true&w=majority';
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose_1.default.set("useFindAndModify", false);
 console.log(uri);
