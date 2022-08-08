@@ -13,6 +13,8 @@ const Todo: React.FC<Props> = ({ todo, updateTodo, editTodo, deleteTodo }) => {
     const [desc, setDesc] = useState(todo.description)
     const checkTodo: string = (todo.status && !edit) ? `line-through` : ''
     const inputStyle = {
+        width: '90%',
+        display: 'block',
         color: edit ? '#000' : '#fff',
         backgroundColor: edit ? '#fff' : '#444',
         border: edit ? 'none' : 'none',
@@ -44,7 +46,7 @@ const Todo: React.FC<Props> = ({ todo, updateTodo, editTodo, deleteTodo }) => {
                 onClick={() => updateTodo(todo)}
                 className={todo.status ? `hide-button` : 'Card--button__done'}
             >
-            Complete
+            Mark as done
             </button>
 
             <button hidden={edit} onClick={()=>{SetEdit(true)}}>

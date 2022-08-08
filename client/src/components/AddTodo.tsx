@@ -7,26 +7,33 @@ type Props = {
 const AddTodo: React.FC<Props> = ({ saveTodo }) => {
   const [formData, setFormData] = useState<ITodo | {}>()
 
+  const inputStyle = {
+    width: '90%',
+    display: 'block',
+  }
   const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
     setFormData({
       ...formData,
       [e.currentTarget.id]: e.currentTarget.value,
     })
   }
+  const handleSubmit = (e: React.FormEvent, data: ITodo | any) => {
+    saveTodo(e, data)
+  }
 
   return (
-    <form className='Form' onSubmit={(e) => { saveTodo(e, formData); }}>
+    <form className='Form' onSubmit={(e) => { handleSubmit(e, formData) }}>
       <div>
         <div>
           <label htmlFor='name'>Name</label>
-          <input onChange={handleForm} type='text' id='name' />
+          <input style={inputStyle} onChange={handleForm} type='text' id='name' />
         </div>
         <div>
           <label htmlFor='description'>Description</label>
-          <input onChange={handleForm} type='text' id='description' />
+          <input style={inputStyle} onChange={handleForm} type='text' id='description' />
         </div>
       </div>
-      <button disabled={formData === undefined ? true: false} >Add Todo</button>
+      <button disabled={formData === undefined ? true: false} >Add Task</button>
     </form>
   )
 }
